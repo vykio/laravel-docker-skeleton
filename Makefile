@@ -26,3 +26,15 @@ migrate:
 
 tinker:
 	docker-compose -f docker-compose.yml exec $(PHP_CONTAINER) php artisan tinker
+
+exec:
+	docker exec -it $(PHP_CONTAINER) bash
+
+watch:
+	docker-compose -f docker-compose.yml exec $(PHP_CONTAINER) npm run watch
+
+install:
+	docker-compose -f docker-compose.yml exec $(PHP_CONTAINER) composer install
+
+install-js:
+	docker-compose -f docker-compose.yml exec $(PHP_CONTAINER) npm install
